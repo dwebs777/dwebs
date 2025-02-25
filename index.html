@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Creación de Páginas Web</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init("1Ze_9R7hZMFTnt2fk");
+        });
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🚀 Potencia tu Presencia Online con una Página Web Profesional</h1>
+    </header>
+    <nav>
+        <a href="#inicio" onclick="showSection('inicio')">Inicio</a>
+        <a href="#servicios" onclick="showSection('servicios')">Servicios</a>
+        <a href="#contacto" onclick="showSection('contacto')">Contacto</a>
+    </nav>
+    <div class="container">
+        <div id="inicio" class="section active">
+            <h2>Bienvenido</h2>
+            <p>Ofrecemos soluciones personalizadas para potenciar tu negocio en línea.</p>
+        </div>
+        <div id="servicios" class="section">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-item" onclick="toggleInfo('diseno-web')">
+                <button>Diseño de páginas web</button>
+                <div id="diseno-web" class="service-info">
+                    <p>Diseño de páginas web profesionales, adaptadas a tus necesidades.</p>
+                </div>
+            </div>
+            <div class="service-item" onclick="toggleInfo('seo')">
+                <button>Optimización SEO</button>
+                <div id="seo" class="service-info">
+                    <p>Mejoramos la visibilidad de tu sitio en los motores de búsqueda.</p>
+                </div>
+            </div>
+            <div class="service-item" onclick="toggleInfo('tiendas')">
+                <button>Tiendas en línea</button>
+                <div id="tiendas" class="service-info">
+                    <p>Creación de tiendas en línea personalizadas para tu negocio.</p>
+                </div>
+            </div>
+            <div class="service-item" onclick="toggleInfo('mantenimiento')">
+                <button>Mantenimiento web</button>
+                <div id="mantenimiento" class="service-info">
+                    <p>Mantenimiento y actualización constante de tu sitio web.</p>
+                </div>
+            </div>
+        </div>
+        <div id="contacto" class="section">
+            <h2>Contacto</h2>
+            <div class="contact-buttons">
+                <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp">📱</a>
+                <button onclick="openModal()" aria-label="Email">📧</button>
+            </div>
+        </div>
+    </div>
+    <div id="emailModal" class="modal" role="dialog" aria-labelledby="emailModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()" aria-label="Cerrar">&times;</span>
+            <form id="contact-form" aria-labelledby="contact-form-title">
+                <h2 id="contact-form-title">Comunícate por correo electrónico con nosotros</h2>
+                <p>¡Nos encantaría saber de ti!</p>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Tu Nombre" required>
+                <label for="email">Correo Electrónico</label>
+                <input type="email" name="email" id="email" placeholder="Tu Correo Electrónico" required>
+                <label for="mensaje">Mensaje</label>
+                <textarea name="mensaje" id="mensaje" rows="4" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="mensaje-exito" style="display:none; color:green;">Mensaje enviado ✅</p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
